@@ -1,0 +1,13 @@
+<div class="row" *ngFor="let headlineRow of topHeadlines">
+    <div class="col-sm-3" *ngFor="let headline of headlineRow">
+        <div class="card bg-light">
+            <img class="card-img-top" [src]="headline['urlToImage']" alt="Card image">
+            <div class="card-body">
+                <h4 class="card-title">
+                  <a [href]='headline["url"]' target="_blank">{{headline['title']}}</a>
+                </h4>
+                <p class="card-text">{{headline['description']}}</p>
+            </div> 
+        </div>
+    </div>
+</div>
