@@ -1,15 +1,22 @@
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
       <div class="navbar-header">
+        <img src="./assets/live-news-report.png" class="site-logo pull-left" routerLink="/sources/all"/>
         <a class="navbar-brand" href="#">
-          NewZ
+          New Z
         </a>
-        <img url="./assets/10895-NN6QH9.jpg"/>
+        <h5 class="slogan-text">News in realtime.</h5>
       </div>
       <ul class="nav navbar-nav pull-right">
-        <li class="active"><a href="#">All sources</a></li>
+        <li class="active"><a routerLink="/sources/all">All sources</a></li>
         <li class="active"><a routerLink="/newscat/srcs">Sources by category</a></li>
         <li class="active"><a routerLink="/newscat/cat">Headlines by category</a></li>
+        <li class="dropdown active">
+          <a class="dropdown-toggle" data-toggle="dropdown">{{selectedCountry == '' ? 'Choose country' : selectedCountry}}
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li class="country-item" *ngFor="let country of countries" (click)="selectCountry(country['code'])">{{country['name']}}</li>
+          </ul>
       </ul>
     </div>
 </nav>

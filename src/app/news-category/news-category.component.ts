@@ -10,7 +10,7 @@ export class NewsCategoryComponent implements OnInit {
 
   categories = [['business', 'entertainment', 'general', 'health'], ['science', 'sports', 'technology']];
   source = '';
-  sourceOrCategory = ''
+  sourceOrCategory = '';
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {

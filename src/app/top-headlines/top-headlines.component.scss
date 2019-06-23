@@ -2,7 +2,7 @@
     margin-top: 10px;
     margin-bottom: 10px;
     border-style: solid;
-    border-width: 2px;
+    border-width: 1px;
     padding: 5px 5px 5px 5px;
     height: 400px;
     box-shadow: 5px 10px #888888;
@@ -21,4 +21,8 @@
 
 .card-body {
     height: 150px;
+}
+
+.section-header {
+    margin-left: 20px;
 }

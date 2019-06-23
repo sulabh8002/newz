@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NewsService } from './news.service';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,45 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'newz';
-  constructor() {
+  countries = [{
+    code: 'us',
+    name: 'USA'
+  },
+  {
+    code: 'in',
+    name: 'India'
+  },
+  {
+    code: 'fr',
+    name: 'France'
+  },
+  {
+    code: 'ca',
+    name: 'Canada'
+  }];
+  selectedCountry = '';
+  constructor(private newsService: NewsService) {
   }
+   ngOnInit() {
+     if (this.newsService.getCountryCode() == '') {
+      this.newsService.setCountryCode('us');
+      this.selectedCountry = 'USA';
+     }
+     this.countries.forEach( x => {
+       if(x['code'] == this.newsService.getCountryCode()) {
+         this.selectedCountry = x['name'];
+       }
+     });
+   }
+
+   selectCountry(countryCode: string) {
+      this.newsService.setCountryCode(countryCode);
+      this.countries.forEach( x => {
+        if(x['code'] == this.newsService.getCountryCode()) {
+          this.selectedCountry = x['name'];
+        }
+      });
+      window.location.reload();
+      // console.log(this.newsService.getCountryCode());
+   }
 }

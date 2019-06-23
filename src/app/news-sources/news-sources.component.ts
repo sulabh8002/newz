@@ -11,19 +11,19 @@ export class NewsSourcesComponent implements OnInit {
 
   sources = [];
   category = '';
+  countryCode = '';
   constructor(private newsService: NewsService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
       this.category = params.get("cat");
     });
-
-    this.newsService.setCountry('in');
-    this.getSources();
+    this.countryCode = this.newsService.getCountryCode();
+    this.getSources(this.category, this.countryCode);
   }
 
-  getSources() {
-    this.newsService.getSources(this.category).subscribe(
+  getSources(category: string, countryCode: string) {
+    this.newsService.getSources(category, countryCode).subscribe(
       data => {
         let sourceRow = [];
         for (let i = 0; i < data['sources'].length; i++) {

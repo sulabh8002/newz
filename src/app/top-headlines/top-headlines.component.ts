@@ -12,6 +12,7 @@ export class TopHeadlinesComponent implements OnInit {
   source = '';
   category = '';
   topHeadlines = [];
+  countryCode = '';
   constructor(private newsService: NewsService, private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -19,12 +20,12 @@ export class TopHeadlinesComponent implements OnInit {
       this.source = params.get("source");
       this.category = params.get("cat");
     });
-
-    this.getHeadlines();
+    this.countryCode = this.newsService.getCountryCode();
+    this.getHeadlines(this.source, this.category, this.countryCode);
   }
 
-  getHeadlines() {
-    this.newsService.getHeadlines(this.source, this.category).subscribe(
+  getHeadlines(source: string, category: string, countryCode: string) {
+    this.newsService.getHeadlines(source, category, countryCode).subscribe(
       data => {
         let headlineRow = [];
         for (let i = 0; i < data['articles'].length; i++) {

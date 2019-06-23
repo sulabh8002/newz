@@ -6,13 +6,18 @@
     overflow: hidden;
     text-overflow: ellipsis;
     border-style: solid;
-    border-width: 2px;
+    border-width: 1px;
     padding: 5px 5px 5px 5px;
     box-shadow: 5px 10px #888888;
 
     .card-header {
-        height: 30px;
-        font-size: 20px
+        height: 40px;
+        font-size: 20px;
+        border-style: solid;
+        // border-right-style: solid;
+        border-width: 1px;
+        padding: 5px 5px 5px 5px;
+        text-align: center;
     }
 
     .card-body {
@@ -25,4 +30,8 @@
     .card-footer {
         height: 20px;
     }
+}
+
+.section-header {
+    margin-left: 18px;
 }
