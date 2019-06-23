@@ -1,0 +1,8 @@
+<div class="row" *ngFor="let categoryRow of categories">
+    <div class="col-sm-3" *ngFor="let category of categoryRow">
+        <div class="card bg-light">
+            <a [routerLink]="['/sources', category]" *ngIf="sourceOrCategory=='srcs'">{{category}}</a>
+            <a [routerLink]="['/headlines', 'all', category]" *ngIf="sourceOrCategory=='cat'">{{category}}</a>
+        </div>
+    </div>
+</div>
