@@ -29,12 +29,12 @@ export class NewsService {
   }
 
   getHeadlines(source: string, category: string, countryCode: string) {
-     let url = '';
+      let url = '';
 
-      if(source !== 'all') {
+      if (source !== 'all') {
         url = 'https://newsapi.org/v2/top-headlines?country=' + countryCode + '&source=' +
         source + '&apiKey=6bfc63ea3b9e474385655e6c4997f9ef';
-      } 
+      }
       
       if(category !== 'all') {
         url = 'https://newsapi.org/v2/top-headlines?country=' + countryCode + '&category=' +

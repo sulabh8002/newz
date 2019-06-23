@@ -25,8 +25,10 @@ export class AppComponent {
     name: 'Canada'
   }];
   selectedCountry = '';
+
   constructor(private newsService: NewsService) {
   }
+
    ngOnInit() {
      if (this.newsService.getCountryCode() == '') {
       this.newsService.setCountryCode('us');
@@ -47,6 +49,5 @@ export class AppComponent {
         }
       });
       window.location.reload();
-      // console.log(this.newsService.getCountryCode());
    }
 }
