@@ -1,9 +1,9 @@
-#vnews
+# vnews
 A web app to read news from different sources and categories.
 
-##Getting started
+## Getting started
 
-###Prerequisites 
+### Prerequisites 
 - Npm
 - NodeJs
 
