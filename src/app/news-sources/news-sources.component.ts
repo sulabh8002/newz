@@ -26,6 +26,7 @@ export class NewsSourcesComponent implements OnInit {
     this.newsService.getSources(category, countryCode).subscribe(
       data => {
         let sourceRow = [];
+// ------ Restructuring array to create rows and columns dynamically in HTML ------
         for (let i = 0; i < data['sources'].length; i++) {
           sourceRow.push(data['sources'][i]);
           if ((i + 1) % 4 === 0) {
