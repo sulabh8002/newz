@@ -34,6 +34,7 @@ export class AppComponent {
       this.newsService.setCountryCode('us');
       this.selectedCountry = 'USA';
      }
+    // ----To select the country according to the code-----
      this.countries.forEach( x => {
        if(x['code'] == this.newsService.getCountryCode()) {
          this.selectedCountry = x['name'];
