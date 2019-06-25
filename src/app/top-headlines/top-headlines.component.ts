@@ -28,6 +28,7 @@ export class TopHeadlinesComponent implements OnInit {
     this.newsService.getHeadlines(source, category, countryCode).subscribe(
       data => {
         let headlineRow = [];
+   // ------ Restructuring array to create rows and columns dynamically in HTML -------
         for (let i = 0; i < data['articles'].length; i++) {
           headlineRow.push(data['articles'][i]);
           if ((i + 1) % 4 === 0) {
